@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Zen Garden: The Beauty of CSS Design</title>
+
+	<link rel="stylesheet" media="screen" href="style.css?v=8may2013">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Dave Shea">
+	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
+	<meta name="robots" content="all">
+
+</head>
+
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>Personal Information</h1>
+		</header>
+
+
+
+<div class="preamble" id="zen-preamble" role="article">
+<h3>Please fill  in every blanks.</h3>
+
+	<form id="frm1" action="form_action.asp">
+  <p><font color="#000000"> 
+  First name:    
+    <input type="text" id="fname" name="fname"> <br/>
+  Last name:    
+    <input type="text" name="lname"><br/>
+    
+  Address:  <br/>
+  House number:
+   <input type="text" size="8"  name="housenum">
+  Street:
+   <input type="text" name="street"><br/>
+  City:
+   <input type="text" name="city">
+  Province:
+   <input type="text" name="prov">
+  Zipcode:
+   <input name="zip" type="text" maxlength="5"><br/>
+   
+ Phone number: +662-
+  <input type="text" name="pn1" size="1" maxlength="3">-
+  <input type="text" name="pn2" size="1" maxlength="3"><br/>
+   
+  Cell phone number: 
+  <input name="cpn1"  type="text" value="+66"  size="4" maxlength="5">-
+  <input type="text" name="cpn2"  size="1" maxlength="3">-
+  <input type="text" name="cpn3" size="1" maxlength="3"><br/>
+ 
+  Birthday:
+  <input type="date" name="bday"><br/>
+    
+  Citizenship number:
+  <input name="zip" type="text" size="14" maxlength="13"><br/>
+   
+  Zodiac Sign:
+  <select id="zo_sign">
+  <option>Aquarius</option>
+  <option>Pisces</option>
+  <option>Aries</option>
+  <option>Taurus</option>
+  <option>Gemini </option>
+  <option>Cancer</option>
+  <option>Leo</option>
+  <option>Virgo</option>
+  <option>Libra </option>
+  <option>Scorpio</option>
+  <option>Sagittarius</option>
+  <option>Capricorn</option></select><br/>
+  
+  Zodiac Year:
+  <select id="zo_year">
+  <option>Rat</option>
+  <option>Ox</option>
+  <option>Tiger</option>
+  <option>Rabbit</option>
+  <option>Dragon </option>
+  <option>Snake</option>
+  <option>Horse</option>
+  <option>Goat</option>
+  <option>Monkey </option>
+  <option>Rooster</option>
+  <option>Dog</option>
+  <option>Pig</option>
+  </select><br/>
+  
+  Birth Day of Week:
+  <select id="Dow">
+  <option>Monday</option>
+  <option>Tuesday</option>
+  <option>Wednesday</option>
+  <option>Thursday</option>
+  <option>Friday </option>
+  <option>Saturday</option>
+  <option>Sunday</option>
+  </select> </font>
+ 
+  </p>
+  
+</form>
+	 
+	</section>
+    <form>
+<input type="button" onclick="Fun_save()" value="Save">
+<input type="button" onclick="Fun_reset()" value="Reset">
+<input type="button" onclick="Fun_submit()" value="Submit">
+</form> </div>
+<script>
+function Fun_save(){
+	var x = document.cookie;
+	document.getElementById("frm1").focus();
+}
+function Fun_reset(){
+	document.getElementById("frm1").reset();
+}
+function Fun_submit() {
+	var x = document.getElementById("frm1").getAttribute("fname")
+	alert("Created " +x+ " cookie");
+}
+</script>
+
+
+
+
+</body>
+</html>
