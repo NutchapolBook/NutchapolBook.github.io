@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" media="screen" href="style.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lab4</title>
+</head>
+
+<body><form id="frm1">
+<div class="data" id="data">
+$
+<p><font color="#000000"> 
+  First name:    
+    <input type="text" id="fname" name="fname"> <br/>
+  Last name:    
+    <input type="text" id="lname"name="lname"><br/>
+   
+  Birthday:
+  <input type="date" id="bday" name="bday"><br/>
+    
+  
+  <form action="">Gender: 
+  <input type="radio" id="Gender" name="gender" value="male"> Male
+  <input type="radio" id="Gender" name="gender" value="female">Female<br>
+	</form>
+ 
+  Province:
+  <select id="Province">
+  <option>กรุงเทพมหานคร</option>
+  <option>กระบี่</option>
+  <option>กาญจนบุรี</option>
+  <option>กาฬสินธุ์</option>
+  <option>กำแพงเพชร</option>
+  <option>ขอนแก่น</option>
+  <option>จันทบุรี</option>
+  <option>ฉะเชิงเทรา</option>
+  <option>ชลบุรี</option>
+  <option>ชัยนาท</option>
+  <option>ชัยภูมิ</option>
+  <option>ชุมพร </option>
+  <option>เชียงราย</option>
+  <option>เชียงใหม่</option>
+  <option>ตรัง</option>
+  <option>ตราด</option>
+  <option>ตาก</option>
+  <option>นครนายก</option>
+  <option>นครปฐม</option>
+  <option>นครพนม</option>
+  <option>นครราชสีมา</option>
+  <option>นครศรีธรรมราช</option>
+  <option>นครสวรรค์</option>
+  <option>นนทบุรี</option>
+  <option>นราธิวาส</option>
+  <option>น่าน</option>
+  <option>บึงกาฬ</option>
+  <option>บุรีรัมย์</option>
+  <option>ปทุมธานี</option>
+  <option>ประจวบคีรีขันธ์</option>
+  <option>ปราจีนบุรี</option>
+  <option>ปัตตานี</option>
+  <option>พระนครศรีอยุธยา</option>
+  <option>พังงา</option>
+  <option>พัทลุง</option>
+  <option>พิจิตร</option>
+  <option>พิษณุโลก</option>
+  <option>เพชรบุรี</option>
+  <option>เพชรบูรณ์</option>
+  <option>แพร่</option>
+  <option>พะเยา</option>
+  <option>ภูเก็ต</option>
+  <option>มหาสารคาม</option>
+  <option>มุกดาหาร</option>
+  <option>แม่ฮ่องสอน</option>
+  <option>ยะลา</option>
+  <option>ยโสธร</option>
+  <option>ร้อยเอ็ด</option>
+  <option>ระนอง</option>
+  <option>ระยอง</option>
+  <option>ราชบุรี</option>
+  <option>ลพบุรี</option>
+  <option>ลำปาง</option>
+  <option>ลำพูน</option>
+  <option>เลย</option>
+  <option>ศรีสะเกษ</option>
+  <option>สกลนคร</option>
+  <option>สงขลา</option>
+  <option>สตูล</option>
+  <option>สมุทรปราการ</option>
+  <option>สมุทรสงคราม</option>
+  <option>สมุทรสาคร</option>
+  <option>สระแก้ว</option>
+  <option>สระบุรี</option>
+  <option>สิงห์บุรี</option>
+  <option>สุโขทัย</option>
+  <option>สุพรรณบุรี</option>
+  <option>สุราษฎร์ธานี</option>
+  <option>สุรินทร์</option>
+  <option>หนองคาย</option>
+  <option>หนองบัวลำภู</option>
+  <option>อ่างทอง</option>
+  <option>อุดรธานี</option>
+  <option>อุทัยธานี</option>
+  <option>อุตรดิตถ์</option>
+  <option>อุบลราชธานี</option>
+  <option>อำนาจเจริญ</option></select><br/></form>
+  
+ </p>
+ <div id="text" class="text"></div>
+ <div id="pic" class="pic"></div>
+  
+  
+<script>
+  var name = $("#fname").val();
+
+  var d = new Date();
+  var n = d.getFullYear();
+  var bday = new Date(bday);
+ var year = bday.getFullYear();
+
+  
+  
+function Fun_reset(){
+	document.getElementById("frm1").reset();
+}
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("text").innerHTML =	this.responseText;
+	 document.getElementById("pic").innerHTML =  "<img src='/Lab4/Province/sign/"+$('#Province').val()+".png'></>";
+    }
+  };
+  //console.log($('#Province').val());
+  xhttp.open("GET", "/Lab4/Province/motto/"+$('#Province').val()+'.txt', true);
+  xhttp.send();
+  alert("สวัสดีจ้าคุณ"+$('#fname').val());
+  if(n - year> 18){	
+  
+	  }
+	else{
+		if($("#bday").val()== "male"){}
+		
+		else{}
+		
+		}
+  
+}
+
+</script>
+<input type="button" onclick="loadDoc()" value="Submit">
+<input type="button" onclick="Fun_reset()" value="Cancel">
+</div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+* {
+padding : 0;
+margin : 0;
+}
+body {
+background :  top left repeat-y #FFFFFF;;
+color : #FFF;
+font : 14px/1.4em Arial, Tahoma, Verdana, sans-serif;
+text-align : center;
+}
